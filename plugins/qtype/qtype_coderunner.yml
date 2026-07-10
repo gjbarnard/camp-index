@@ -1,0 +1,10 @@
+component: qtype_coderunner
+source: https://github.com/trampgeek/moodle-qtype_coderunner
+maintainers:
+- github: trampgeek
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: 'CodeRunner: A moodle quiz question type that runs student-submitted program
+  code in a sandbox to check if it satisfies a given set of tests.'

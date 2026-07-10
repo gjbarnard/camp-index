@@ -1,0 +1,11 @@
+component: filter_filtercodes
+source: https://github.com/michael-milette/moodle-filter_filtercodes
+maintainers:
+- github: michael-milette
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: FilterCodes filter for Moodle enables content creators to easily customize
+  and personalize course and site content using plain text tags (no HTML). For premium
+  support, contact us at https://www.tngconsulting.ca/contact

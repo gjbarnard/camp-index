@@ -1,0 +1,8 @@
+component: theme_snap
+source: https://github.com/open-lms-open-source/moodle-theme_snap
+maintainers:
+- github: open-lms-open-source
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []

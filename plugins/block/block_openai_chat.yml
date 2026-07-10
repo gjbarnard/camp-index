@@ -1,0 +1,9 @@
+component: block_openai_chat
+source: https://github.com/Limekiller/moodle-block_openai_chat
+maintainers:
+- github: Limekiller
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: An AI chat block for Moodle

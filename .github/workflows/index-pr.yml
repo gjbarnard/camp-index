@@ -1,0 +1,170 @@
+# Verification pipeline for index pull requests (RFC §4.2).
+#
+# Two layers:
+#   1. registry checks (Python / camp tools): schema validation, append-only
+#      ledger enforcement, and source verification — clone the declared repo,
+#      confirm the tag still points at the recorded commit, rebuild the
+#      canonical ZIP deterministically, and compare hashes.
+#   2. plugin checks (moodlehq/moodle-plugin-ci, unchanged from the standard
+#      community workflow): the static subset the RFC names as the trust
+#      floor — phplint, code checker, validate, savepoints. Full PHPUnit and
+#      Behat runs remain the author's own CI's responsibility.
+#
+# Malware/behavioral scanning (RFC §4.2 step 5) is a planned third layer.
+
+name: Index PR verification
+
+on:
+  pull_request:
+    paths:
+      - "index/plugins/**"
+
+jobs:
+  changed:
+    name: Detect changed entries
+    runs-on: ubuntu-24.04
+    outputs:
+      entries: ${{ steps.diff.outputs.entries }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - id: diff
+        name: List changed index entries as a JSON matrix
+        run: |
+          entries=$(git diff --name-only --diff-filter=ACM \
+              origin/${{ github.base_ref }}...HEAD -- 'index/plugins/**/*.yml' \
+            | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "entries=$entries" >> "$GITHUB_OUTPUT"
+          echo "Changed entries: $entries"
+
+  registry:
+    name: Registry checks
+    needs: changed
+    if: needs.changed.outputs.entries != '[]'
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        entry: ${{ fromJSON(needs.changed.outputs.entries) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install camp tools
+        run: pip install --quiet ./tools
+
+      - name: Validate entry
+        run: camp validate "${{ matrix.entry }}"
+
+      - name: Enforce append-only ledger
+        run: |
+          git show origin/${{ github.base_ref }}:"${{ matrix.entry }}" > /tmp/base-entry.yml 2>/dev/null \
+            || rm -f /tmp/base-entry.yml
+          camp ledger-check /tmp/base-entry.yml "${{ matrix.entry }}"
+
+      - name: Verify releases against source
+        run: camp verify "${{ matrix.entry }}"
+
+  plugin-checks:
+    name: moodle-plugin-ci
+    needs: [changed, registry]
+    if: needs.changed.outputs.entries != '[]'
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        entry: ${{ fromJSON(needs.changed.outputs.entries) }}
+        # The registry targets Moodle 4.5 LTS through 5.2+ (docs/DESIGN.md D7).
+        # The static trust-floor checks are Moodle-version-light, so the matrix
+        # covers the endpoints of that range: oldest supported LTS + newest
+        # stable. PHP 8.2 is valid across the whole range.
+        moodle-branch: [MOODLE_405_STABLE, MOODLE_502_STABLE]
+        php: ["8.2"]
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install camp tools
+        run: pip install --quiet ./tools
+
+      - name: Check out plugin source at the newest recorded release
+        run: |
+          python - "${{ matrix.entry }}" <<'EOF'
+          import subprocess, sys, yaml
+          entry = yaml.safe_load(open(sys.argv[1]))
+          if not entry["releases"]:
+              print("tier 0 / no releases; nothing to check")
+              open("skip-plugin-checks", "w").close()
+              sys.exit(0)
+          release = entry["releases"][-1]
+          subprocess.run(["git", "clone", entry["source"], "plugin"], check=True)
+          subprocess.run(["git", "-C", "plugin", "checkout", release["commit"]], check=True)
+          EOF
+
+      - name: Setup PHP
+        if: ${{ hashFiles('skip-plugin-checks') == '' }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          ini-values: max_input_vars=5000
+          coverage: none
+
+      - name: Initialise moodle-plugin-ci
+        if: ${{ hashFiles('skip-plugin-checks') == '' }}
+        run: |
+          composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^4
+          echo $(cd ci/bin; pwd) >> $GITHUB_PATH
+          echo $(cd ci/vendor/bin; pwd) >> $GITHUB_PATH
+          sudo locale-gen en_AU.UTF-8
+
+      - name: Install plugin into a fresh Moodle
+        if: ${{ hashFiles('skip-plugin-checks') == '' }}
+        run: moodle-plugin-ci install --plugin ./plugin --db-host=127.0.0.1
+        env:
+          DB: pgsql
+          MOODLE_BRANCH: ${{ matrix.moodle-branch }}
+
+      - name: Disclosure-label heuristics (warn-only, RFC §4.7)
+        if: ${{ hashFiles('skip-plugin-checks') == '' && !cancelled() }}
+        run: |
+          declared=$(python -c "import sys,yaml; print(','.join(yaml.safe_load(open(sys.argv[1])).get('labels',[])))" "${{ matrix.entry }}")
+          camp lint-labels plugin ${declared:+--declared "$declared"}
+
+      - name: Basic security lint (warn-only, RFC §4.2)
+        if: ${{ hashFiles('skip-plugin-checks') == '' && !cancelled() }}
+        run: camp audit plugin
+
+      - name: PHP Lint
+        if: ${{ hashFiles('skip-plugin-checks') == '' && !cancelled() }}
+        run: moodle-plugin-ci phplint
+
+      - name: Moodle Code Checker
+        if: ${{ hashFiles('skip-plugin-checks') == '' && !cancelled() }}
+        run: moodle-plugin-ci phpcs --max-warnings 0
+
+      - name: Validate plugin structure
+        if: ${{ hashFiles('skip-plugin-checks') == '' && !cancelled() }}
+        run: moodle-plugin-ci validate
+
+      - name: Check upgrade savepoints
+        if: ${{ hashFiles('skip-plugin-checks') == '' && !cancelled() }}
+        run: moodle-plugin-ci savepoints

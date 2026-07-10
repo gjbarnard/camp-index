@@ -1,0 +1,11 @@
+component: local_staticpage
+source: https://github.com/moodle-an-hochschulen/moodle-local_staticpage
+maintainers:
+- github: moodle-an-hochschulen
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Moodle plugin which displays static information pages which exist outside
+  any course, imprint or faq pages for example, complete with Moodle navigation and
+  theme

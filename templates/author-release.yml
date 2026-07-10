@@ -1,0 +1,79 @@
+# camp release workflow — copy to .github/workflows/camp-release.yml in your
+# plugin repository. Publishing to camp then means: git tag v1.2.3 && git push --tags
+#
+# What it does on every version tag:
+#   1. checks your repo has a listing manifest (fails with instructions if not),
+#   2. runs the same label heuristics and security lint camp CI runs, so you
+#      see findings before reviewers do (warn-only here),
+#   3. builds the canonical ZIP and computes your release record with camp
+#      tools — the identical code path camp CI verifies against,
+#   4. opens a pull request against the camp index with the new release
+#      appended to your plugin's entry.
+#
+# NOTE (Stage: pre-launch): CAMP_INDEX_REPO below is a placeholder until the
+# public index repository exists. Trusted publishing (OIDC, RFC §4.3) will
+# replace the personal-access-token PR flow before launch; this template is
+# the bootstrap version.
+
+name: Publish release to camp
+
+on:
+  push:
+    tags: ["v*"]
+
+env:
+  CAMP_INDEX_REPO: CAMP-ORG/index        # ← placeholder: the camp index repository
+  COMPONENT: mod_example                 # ← your frankenstyle component name
+  SUPPORTED_MOODLE: "4.5,5.0,5.1,5.2"    # ← branches this release supports
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out plugin at the tag
+        uses: actions/checkout@v4
+        with:
+          path: plugin
+          fetch-depth: 0
+
+      - name: Check out camp index
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.CAMP_INDEX_REPO }}
+          path: index-repo
+          token: ${{ secrets.CAMP_INDEX_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install camp tools
+        run: pip install --quiet ./index-repo/tools
+
+      - name: Require a listing manifest
+        run: camp scaffold plugin --check
+
+      - name: Label heuristics + security lint (warn-only preview)
+        run: |
+          camp lint-labels plugin || true
+          camp audit plugin || true
+
+      - name: Compute and append the release record
+        run: |
+          plugintype="${COMPONENT%%_*}"
+          camp release "index-repo/index/plugins/${plugintype}/${COMPONENT}.yml" \
+            "${GITHUB_REF_NAME}" --source ./plugin \
+            --supported-moodle "${SUPPORTED_MOODLE}"
+
+      - name: Open index pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.CAMP_INDEX_TOKEN }}
+          path: index-repo
+          branch: release/${{ env.COMPONENT }}-${{ github.ref_name }}
+          commit-message: "${{ env.COMPONENT }}: release ${{ github.ref_name }}"
+          title: "${{ env.COMPONENT }}: release ${{ github.ref_name }}"
+          body: |
+            Automated release PR from ${{ github.repository }} @ ${{ github.ref_name }}.
+            camp CI will independently rebuild the artifact from the tag and
+            verify the recorded hashes before this can merge.
