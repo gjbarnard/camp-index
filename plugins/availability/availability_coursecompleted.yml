@@ -1,0 +1,9 @@
+component: availability_coursecompleted
+source: https://github.com/ewallah/moodle-availability_coursecompleted
+maintainers:
+- github: ewallah
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Restriction by course completion

@@ -1,0 +1,10 @@
+component: block_people
+source: https://github.com/moodle-an-hochschulen/moodle-block_people
+maintainers:
+- github: moodle-an-hochschulen
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Moodle block which displays all teachers of a course with contact quicklinks,
+  as well as a quicklink to the participants list

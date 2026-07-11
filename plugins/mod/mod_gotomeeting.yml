@@ -1,0 +1,9 @@
+component: mod_gotomeeting
+source: https://github.com/alokrai1/moodle-mod_gotomeeting
+maintainers:
+- github: alokrai1
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Moodle GoToMeeting Integration

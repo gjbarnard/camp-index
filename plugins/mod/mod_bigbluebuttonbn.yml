@@ -1,0 +1,10 @@
+component: mod_bigbluebuttonbn
+source: https://github.com/blindsidenetworks-ps/moodle-mod_bigbluebuttonbn
+maintainers:
+- github: blindsidenetworks-ps
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Blindside Networks integration of BigBlueButton for Moodle. This is an Activity
+  Module for meeting administration.

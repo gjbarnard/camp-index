@@ -1,0 +1,10 @@
+component: mod_edflex
+source: https://github.com/edflex-tech/moodle-mod_edflex
+maintainers:
+- github: edflex-tech
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: A plug-and-play connector that brings Edflex’s curated catalog, SSO, and
+  activity sync directly to your Moodle instance.

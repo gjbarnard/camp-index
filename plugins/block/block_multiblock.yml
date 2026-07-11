@@ -1,0 +1,10 @@
+component: block_multiblock
+source: https://github.com/catalyst/moodle-block_multiblock
+maintainers:
+- github: catalyst
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Moodle plugin which allows you to embed multiple blocks within a single block
+  region using different formats including tabs and accordions

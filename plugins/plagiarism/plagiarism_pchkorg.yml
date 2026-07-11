@@ -1,0 +1,11 @@
+component: plagiarism_pchkorg
+source: https://github.com/PlagiarismCheck/moodle-plagiarism_pchkorg
+maintainers:
+- github: PlagiarismCheck
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Plagiarismcheck.org is a sophisticated similarity search engine. We advocate
+  for bringing technology into academics to help instructors save time and motivate
+  students write better papers.

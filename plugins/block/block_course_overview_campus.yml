@@ -1,0 +1,11 @@
+component: block_course_overview_campus
+source: https://github.com/moodle-an-hochschulen/moodle-block_course_overview_campus
+maintainers:
+- github: moodle-an-hochschulen
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Moodle block which provides all functionality of block_course_overview, provides
+  additional filters to be used on university campuses as well as the possibility
+  to hide courses from the course list

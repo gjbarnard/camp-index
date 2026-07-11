@@ -1,0 +1,9 @@
+component: webservice_restful
+source: https://github.com/FMCorz/moodle-webservice_restful
+maintainers:
+- github: FMCorz
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: RESTful web service API for Moodle

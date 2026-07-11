@@ -1,0 +1,9 @@
+component: auth_oidc
+source: https://github.com/microsoft/moodle-auth_oidc
+maintainers:
+- github: microsoft
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: OpenID Connect authentication plugin for Moodle LMS

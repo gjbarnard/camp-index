@@ -1,0 +1,9 @@
+component: mod_studentquiz
+source: https://github.com/studentquiz/moodle-mod_studentquiz
+maintainers:
+- github: studentquiz
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Moodle-Plugin

@@ -1,0 +1,10 @@
+component: filter_wiris
+source: https://github.com/wiris/moodle-filter_wiris
+maintainers:
+- github: wiris
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Moodle plugin that converts any MathML or LaTeX to accessible images using
+  the MathType API services by Wiris

@@ -1,0 +1,11 @@
+component: local_contact
+source: https://github.com/michael-milette/moodle-local_contact
+maintainers:
+- github: michael-milette
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Contact Form is a Moodle plugin that allows your site to process information
+  submitted through HTML forms to the site's support email address. For premium support,
+  contact us at https://www.tngconsulting.ca/contact

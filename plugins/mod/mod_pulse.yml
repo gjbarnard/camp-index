@@ -1,0 +1,9 @@
+component: mod_pulse
+source: https://github.com/bdecentgmbh/moodle-mod_pulse
+maintainers:
+- github: bdecentgmbh
+tier: 0
+status: active
+discovered: '2026-07-10'
+releases: []
+summary: Automate workflows in your courses to improve student engagement and compliance.
