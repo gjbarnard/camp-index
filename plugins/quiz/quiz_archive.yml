@@ -2,7 +2,7 @@ component: quiz_archive
 source: https://github.com/bfh/moodle-quiz_archive
 maintainers:
 - github: bfh
-tier: 0
+tier: 1
 status: active
 discovered: '2026-07-10'
 releases: []
@@ -15,3 +15,6 @@ metrics:
   archived: false
   checked: '2026-07-11'
 summary: moodle-quizarchive
+security-contact: https://github.com/bfh/moodle-quiz_archive/security
+labels:
+- fully-free
