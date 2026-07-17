@@ -1,11 +1,10 @@
 component: logstore_xapi
-source: https://github.com/xAPI-vle/moodle-logstore_xapi
+source: https://github.com/davidpesce/moodle-logstore_xapi
 maintainers:
 - name: David Pesce
   github: davidpesce
-- github: xAPI-vle
 tier: 2
-security-contact: https://github.com/xAPI-vle/moodle-logstore_xapi/security/advisories/new
+security-contact: https://github.com/davidpesce/moodle-logstore_xapi/security/advisories/new
 labels:
 - fully-free
 - commercial-support-available
@@ -24,6 +23,20 @@ releases:
   zip-sha256: f3a90401bcd9ccc48f10f5729840591bf08f03a599d5625893ad535aef8ffe8e
   published: '2026-07-15T16:26:09Z'
   released: '2026-02-23T21:30:07Z'
+- version: 5.0.2
+  tag: v5.0.2
+  commit: 93b55fa751056d19a3424bcac1d99f0aa018feb0
+  moodle-version: 2026071700
+  supported-moodle:
+  - '4.3'
+  - '4.4'
+  - '4.5'
+  - '5.0'
+  - '5.1'
+  zip-sha256: f8ed20a3a1105b5e20158d9b3371f9dbb3273f11a556a08ae5d95e0a8b4b1cb6
+  published: '2026-07-17T22:17:28Z'
+  released: '2026-07-17T22:17:03Z'
+  listing-sha256: 0657cc139aee025a34d4aadc466f5dba156f7da1b5c369879bc8c5543ec26bb8
 license: GPL-3.0
 summary: A Moodle plugin to send xAPI statements to an LRS using events in the Moodle
   logstore.
