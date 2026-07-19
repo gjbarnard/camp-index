@@ -35,6 +35,7 @@ concurrency:
 
 env:
   BASE_URL: https://camp-registry.org
+  ARTIFACTS_BASE: https://artifacts.camp-registry.org
 
 jobs:
   build:
@@ -47,7 +48,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install camp tools
-        run: pip install --quiet "camp-tools[screenshots] @ git+https://github.com/camp-registry/camp-tools@v0.2.16"
+        run: pip install --quiet "camp-tools[screenshots,archive] @ git+https://github.com/camp-registry/camp-tools@v0.2.16"
 
       - name: Setup PHP (code checks)
         uses: shivammathur/setup-php@v2
@@ -63,6 +64,11 @@ jobs:
           echo "$(composer global config bin-dir --absolute --quiet)" >> "$GITHUB_PATH"
 
       - name: Generate the distribution tree
+        env:
+          B2_KEY_ID: ${{ secrets.B2_KEY_ID }}
+          B2_APPLICATION_KEY: ${{ secrets.B2_APPLICATION_KEY }}
+          B2_BUCKET: ${{ vars.B2_BUCKET }}
+          B2_ENDPOINT: ${{ vars.B2_ENDPOINT }}
         run: |
           # Per-version code-check summaries (published at /checks/ for
           # transparency; also feeds the site's chips and badges). Results
@@ -76,17 +82,23 @@ jobs:
           # the live site (pin re-checked) instead of cloned.
           camp ingest-all . --out "$RUNNER_TEMP/listings" --reuse "$BASE_URL"
 
+          # The archive (D22): deposit any new ledger releases (append-only,
+          # compliance-locked), then audit that every release is archived
+          # hash-exact — a hole turns this publish red.
+          camp deposit . --bucket "$B2_BUCKET" --endpoint "$B2_ENDPOINT"
+          camp archive-audit . --bucket "$B2_BUCKET" --endpoint "$B2_ENDPOINT"
+
           # The browse site lives at the tree root: / is the browse page,
           # /plugin/... the detail pages, machine paths alongside.
           camp site . "$BASE_URL" dist --listings "$RUNNER_TEMP/listings" --checks dist/checks \
-            --reviews https://mdlshield.com/api/reviews/published
+            --reviews https://mdlshield.com/api/reviews/published \
+            --artifacts-base "$ARTIFACTS_BASE"
           # Publish the ingested listings + manifest so the next publish
           # can reuse them (screenshots already ship at /shots/).
           mkdir -p dist/listings
           find "$RUNNER_TEMP/listings" -maxdepth 1 -type f -exec cp {} dist/listings/ \;
 
-          camp composer . "$BASE_URL" dist/packages.json
-          camp artifacts . dist/artifacts
+          camp composer . "$BASE_URL" dist/packages.json --artifacts-base "$ARTIFACTS_BASE"
           python -c "
           import camp, pathlib, shutil
           shutil.copytree(pathlib.Path(camp.__file__).parent / 'schema', 'dist/schema')
