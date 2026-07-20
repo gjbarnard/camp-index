@@ -128,3 +128,27 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify the live site is fresh, then dead-man ping
+        # The ping tells healthchecks.io "a publish reached visitors".
+        # Missed pings (dead cron, red run, broken deploy) alert David
+        # from OUTSIDE GitHub — a monitor inside our own cron would die
+        # of the same disease it watches for.
+        env:
+          HC_PING_URL: ${{ secrets.HC_PING_URL }}
+        run: |
+          for i in $(seq 1 10); do
+            built=$(curl -fsS -m 15 https://camp-registry.org/version.json               | python3 -c "import json,sys; print(json.load(sys.stdin)['built'])") || built=""
+            if [ -n "$built" ]; then
+              age=$(( $(date -u +%s) - $(date -u -d "$built" +%s) ))
+              echo "live built: $built (${age}s ago)"
+              [ "$age" -lt 1800 ] && fresh=1 && break
+            fi
+            sleep 20
+          done
+          [ "${fresh:-}" = "1" ] || { echo "live site never showed a fresh build"; exit 1; }
+          if [ -n "$HC_PING_URL" ]; then
+            curl -fsS -m 10 --retry 3 "$HC_PING_URL" > /dev/null && echo "pinged"
+          else
+            echo "no HC_PING_URL secret yet; freshness verified, ping skipped"
+          fi
