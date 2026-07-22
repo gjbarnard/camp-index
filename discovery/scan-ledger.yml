@@ -1,3 +1,6 @@
+# Scan ledger: every repository the discovery scan has evaluated,
+# with the outcome and why. Maintained by `camp scan`; do not edit
+# release data here — this file never affects installed artifacts.
 repos:
   0-Guilherme/PowerMoodleReports:
     outcome: no-version-php
@@ -350,11 +353,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   AdrianoRuseler/moodle-availability_relativedate:
-    outcome: exists
-    detail: component availability_relativedate already registered (first-come, RFC
-      §8)
+    outcome: name-collision
+    detail: independent repository declaring availability_relativedate, held by https://github.com/ewallah/moodle-availability_relativedate;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: availability_relativedate
   AdrianoRuseler/moodle-local-plugins:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -366,10 +370,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   AdrianoRuseler/moodle-qtype_vplquestion:
-    outcome: exists
-    detail: component qtype_vplquestion already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring qtype_vplquestion, held by https://gitlab.com/osangoi/moodle-qtype_vplquestion;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: qtype_vplquestion
   Advacheck-OU/moodle-plagiarism_advacheck:
     outcome: written
     detail: listed as plagiarism_advacheck
@@ -831,10 +837,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   BlueCodingAI/Moodle-qtype_coderunner:
-    outcome: exists
-    detail: component qtype_coderunner already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring qtype_coderunner, held by https://github.com/trampgeek/moodle-qtype_coderunner;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: qtype_coderunner
   BlueDuangkaew/moodle-local_analysiss:
     outcome: exists
     detail: component local_analysiss already registered (first-come, RFC §8)
@@ -1131,10 +1139,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   CharityLearning/moodle-format_buttons:
-    outcome: exists
-    detail: component format_buttons already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/jrangelardila/moodle-format_buttons,
+      which holds component format_buttons
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: format_buttons
   CharityLearning/moodle-format_tiles:
     outcome: exists
     detail: component format_tiles already indexed this run
@@ -1201,10 +1211,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   CinecaElearning/moodle-logstore_xapi_bestr:
-    outcome: exists
-    detail: component logstore_xapi already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/davidpesce/moodle-logstore_xapi,
+      which holds component logstore_xapi
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: logstore_xapi
   ClassCloud/moodle-repository-mediadrop:
     outcome: written
     detail: listed as repository_mediadrop
@@ -1784,10 +1796,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   EduardoKrausME/moodle-local_geniai:
-    outcome: exists
-    detail: component local_geniai already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_geniai, held by https://github.com/DrKat0m/Geniai_Base_Plugin;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_geniai
   EduardoKrausME/moodle-local_helpdesk:
     outcome: exists
     detail: component local_helpdesk already registered (first-come, RFC §8)
@@ -2076,15 +2090,19 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   EsupPortail/moodle-mod_pod:
-    outcome: exists
-    detail: component repository_pod already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring repository_pod, held by https://github.com/EsupPortail/moodle-repository_pod;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: repository_pod
   EsupPortail/moodle-mod_pod-filter:
-    outcome: exists
-    detail: component filter_pod already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring filter_pod, held by https://github.com/marmotteabbas/moodle-mod_pod-filter_grenoble;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: filter_pod
   EsupPortail/moodle-repository_pod:
     outcome: written
     detail: listed as repository_pod
@@ -2762,11 +2780,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   HarryBleckert/moodle-block_configurable_reports:
-    outcome: exists
-    detail: component block_configurable_reports already registered (first-come, RFC
-      §8)
+    outcome: name-collision
+    detail: independent repository declaring block_configurable_reports, held by https://gitlab.com/angela-araujo/moodle-block_configurablereports;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_configurable_reports
   HarryBleckert/moodle-block_evaluation:
     outcome: written
     detail: listed as block_evaluation
@@ -2828,10 +2847,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   Hipjea/moodle-tool_time_report:
-    outcome: exists
-    detail: component tool_time_report already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/fondation-unit/moodle-tool_time_report,
+      which holds component tool_time_report
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tool_time_report
   Hipjea/moodle-tutorial_block:
     outcome: bad-license
     detail: 'license: none detected'
@@ -3020,10 +3041,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   IOC/moodle-local_mail:
-    outcome: exists
-    detail: component local_mail already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/moodle-local_mail/moodle-local_mail,
+      which holds component local_mail
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_mail
   IOC/moodle-local_materials:
     outcome: written
     detail: listed as local_materials
@@ -3683,10 +3706,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   LGuilletCergy/moodle-local_cohortmanager:
-    outcome: exists
-    detail: component local_cohortmanager already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_cohortmanager, held by https://github.com/ra-sistemas/moodle-local_cohortmanager;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_cohortmanager
   LGuilletCergy/moodle-local_cohortmanageruelibres:
     outcome: exists
     detail: component local_cohortmanager already indexed this run
@@ -4353,10 +4378,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   LukeCarrier/moodle-local_devkit:
-    outcome: exists
-    detail: component local_devkit already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_devkit, held by https://github.com/moodlicious/moodle-local_devkit;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_devkit
   LukeCarrier/moodle-local_fastforward:
     outcome: bad-license
     detail: 'license: none detected'
@@ -4832,10 +4859,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   Multisistemas/moodle-auth-token:
-    outcome: exists
-    detail: component auth_token already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring auth_token, held by https://github.com/valentineus/moodle-auth_token;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: auth_token
   Myddleware/moodle-local_myddleware:
     outcome: exists
     detail: component local_myddleware already registered (first-come, RFC §8)
@@ -5565,10 +5594,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   PaystackHQ/moodle-enrol_paystack:
-    outcome: exists
-    detail: component enrol_paystack already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring enrol_paystack, held by https://github.com/webong/plugin-paystack-moodle-enrol;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: enrol_paystack
   PeTeL-Weizmann/moodle-assignsubmission_teamwork:
     outcome: written
     detail: listed as assignsubmission_teamwork
@@ -5962,11 +5993,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   ProjetoSophiaDev/moodle-availability_coursecompleted:
-    outcome: exists
-    detail: component availability_coursecompleted already registered (first-come,
-      RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring availability_coursecompleted, held by
+      https://github.com/ewallah/moodle-availability_coursecompleted; see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: availability_coursecompleted
   ProjetoSophiaDev/moodle-availability_relativedate:
     outcome: exists
     detail: component availability_relativedate already indexed this run
@@ -6115,10 +6147,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   Random0617/moodle-local_oauth-modified:
-    outcome: exists
-    detail: component local_oauth already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/projectestac/moodle-local_oauth,
+      which holds component local_oauth
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_oauth
   Rau7/moodle-local_usrctr:
     outcome: written
     detail: listed as local_usrctr
@@ -6349,10 +6383,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   SATS-Seminary/moodle-local_unifiedgrader:
-    outcome: exists
-    detail: component local_unifiedgrader already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/mkpelletier/moodle-local_unifiedgrader,
+      which holds component local_unifiedgrader
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_unifiedgrader
   SE-Stuttgart/moodle-local_autocompleteactivities:
     outcome: exists
     detail: component local_autocompleteactivities already registered (first-come,
@@ -6727,15 +6763,19 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   ShinonomeLabo/moodle-auth_oidc:
-    outcome: exists
-    detail: component auth_oidc already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring auth_oidc, held by https://github.com/microsoft/moodle-auth_oidc;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: auth_oidc
   ShinonomeLabo/moodle-block_microsoft:
-    outcome: exists
-    detail: component block_microsoft already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring block_microsoft, held by https://github.com/microsoft/moodle-block_microsoft;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_microsoft
   ShinonomeLabo/moodle-local_o365:
     outcome: exists
     detail: component local_o365 already indexed this run
@@ -6747,10 +6787,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   ShinonomeLabo/moodle-repository_office365:
-    outcome: exists
-    detail: component repository_office365 already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring repository_office365, held by https://github.com/microsoft/moodle-repository_office365;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: repository_office365
   ShinonomeLabo/moodle-theme_boost_o365teams:
     outcome: exists
     detail: component theme_boost_o365teams already indexed this run
@@ -7240,10 +7282,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   StudiUM/moodle-mod_syllabus:
-    outcome: exists
-    detail: component mod_syllabus already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_syllabus, held by https://github.com/martygilbert/moodle-mod_syllabus;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_syllabus
   StudiUM/moodle-mod_wikifilter:
     outcome: exists
     detail: component mod_wikifilter already registered (first-come, RFC §8)
@@ -7453,10 +7497,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   TUM-MZ/moodle-mod_metagroup:
-    outcome: exists
-    detail: component enrol_metagroup already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring enrol_metagroup, held by https://gitlab.com/angela-araujo/moodle-enrol_metagroup;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: enrol_metagroup
   TUM-MZ/moodle-qbehaviour_quizinvideo:
     outcome: needs-review
     detail: declares qbehaviour_quizinvideofeedback but repo name does not correspond;
@@ -7761,10 +7807,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   TorrijaConLeche/moodle-local-mail-fixed-xss:
-    outcome: exists
-    detail: component local_mail already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_mail, held by https://gitlab.com/moodle-local_mail/moodle-local_mail;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_mail
   ToviKurztag/moodle-local_helpdesk:
     outcome: exists
     detail: component local_helpdesk already indexed this run
@@ -8225,10 +8273,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   UNESS-adminsys/moodle-plugins-admin-tool-time_report:
-    outcome: exists
-    detail: component tool_time_report already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/fondation-unit/moodle-tool_time_report,
+      which holds component tool_time_report
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tool_time_report
   UNIMOODLE/moodle-local_certifygencompanion:
     outcome: written
     detail: listed as local_certifygencompanion
@@ -8810,20 +8860,24 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   Wunderbyte-GmbH/moodle-filter_filtercodes:
-    outcome: exists
-    detail: component filter_filtercodes already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring filter_filtercodes, held by https://github.com/michael-milette/moodle-filter_filtercodes;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: filter_filtercodes
   Wunderbyte-GmbH/moodle-filter_german_genderslash:
     outcome: written
     detail: listed as filter_german_genderslash
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   Wunderbyte-GmbH/moodle-format_remuiformat:
-    outcome: exists
-    detail: component format_remuiformat already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring format_remuiformat, held by https://github.com/WisdmLabs/moodle-format_remuiformat;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: format_remuiformat
   Wunderbyte-GmbH/moodle-format_topicswb:
     outcome: written
     detail: listed as format_topicswb
@@ -8960,10 +9014,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   Wunderbyte-GmbH/moodle-mod_newsletter:
-    outcome: exists
-    detail: component mod_newsletter already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/uvedtb/moodle-mod_newsletter,
+      which holds component mod_newsletter
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_newsletter
   Wunderbyte-GmbH/moodle-mod_webcoached:
     outcome: exists
     detail: component mod_webcoached already registered (first-come, RFC §8)
@@ -9213,10 +9269,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   YorkUITInnovation/moodle-theme_yulearn_moove:
-    outcome: exists
-    detail: component theme_moove already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring theme_moove, held by https://github.com/willianmano/moodle-theme_moove;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_moove
   YorkUITInnovation/moodle-tiny_a11yfix:
     outcome: written
     detail: listed as tiny_a11yfix
@@ -9438,56 +9496,71 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   academic-moodle-cooperation/moodle-local_assignsubmission_download:
-    outcome: exists
-    detail: component local_assignsubmission_download already registered (first-come,
-      RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-local_assignsubmission_download,
+      which holds component local_assignsubmission_download
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_assignsubmission_download
   academic-moodle-cooperation/moodle-local_checkmarkreport:
-    outcome: exists
-    detail: component local_checkmarkreport already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-local_checkmarkreport,
+      which holds component local_checkmarkreport
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_checkmarkreport
   academic-moodle-cooperation/moodle-local_downloadcenter:
     outcome: exists
     detail: component local_downloadcenter already registered (first-come, RFC §8)
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   academic-moodle-cooperation/moodle-mod_checkmark:
-    outcome: exists
-    detail: component mod_checkmark already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-mod_checkmark,
+      which holds component mod_checkmark
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_checkmark
   academic-moodle-cooperation/moodle-mod_consentform:
-    outcome: exists
-    detail: component mod_consentform already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-mod_consentform,
+      which holds component mod_consentform
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_consentform
   academic-moodle-cooperation/moodle-mod_grouptool:
-    outcome: exists
-    detail: component mod_grouptool already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-mod_grouptool,
+      which holds component mod_grouptool
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_grouptool
   academic-moodle-cooperation/moodle-mod_offlinequiz:
     outcome: exists
     detail: component mod_offlinequiz already registered (first-come, RFC §8)
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   academic-moodle-cooperation/moodle-mod_organizer:
-    outcome: exists
-    detail: component mod_organizer already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-mod_organizer,
+      which holds component mod_organizer
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_organizer
   academic-moodle-cooperation/moodle-mod_publication:
-    outcome: exists
-    detail: component mod_publication already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-mod_publication,
+      which holds component mod_publication
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_publication
   academic-moodle-cooperation/moodle-report_grouptool:
-    outcome: exists
-    detail: component report_grouptool already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/academic-moodle-cooperation/moodle/moodle-report_grouptool,
+      which holds component report_grouptool
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: report_grouptool
   academic-moodle-cooperation/moodle-report_offlinequizcron:
     outcome: written
     detail: listed as report_offlinequizcron
@@ -9535,10 +9608,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   academic-moodle-cooperation/moodle/moodle-mod_offlinequiz:
-    outcome: exists
-    detail: component mod_offlinequiz already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/academic-moodle-cooperation/moodle-mod_offlinequiz,
+      which holds component mod_offlinequiz
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_offlinequiz
   academic-moodle-cooperation/moodle/moodle-mod_organizer:
     outcome: exists
     detail: component mod_organizer already registered (first-come, RFC §8)
@@ -9780,10 +9855,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   adlnet/Moodle-mod_cmi5launch:
-    outcome: exists
-    detail: component mod_cmi5launch already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/davidpesce/moodle-mod_cmi5launch,
+      which holds component mod_cmi5launch
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_cmi5launch
   adlnet/moodle-jwt-auth:
     outcome: written
     detail: listed as auth_jwt
@@ -11930,10 +12007,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   bdecentgmbh/moodle-local_learningtools:
-    outcome: exists
-    detail: component local_learningtools already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_learningtools, held by https://github.com/futuresea-dev/Moodle-Learning-Tools;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_learningtools
   bdecentgmbh/moodle-mod_avatar:
     outcome: written
     detail: listed as mod_avatar
@@ -12732,10 +12811,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   brickfield/moodle-mod_board:
-    outcome: exists
-    detail: component mod_board already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_board, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-mod_board;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_board
   brickfieldprojects/moodle-block_accessibility:
     outcome: exists
     detail: component block_accessibility already registered (first-come, RFC §8)
@@ -12772,10 +12853,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   brum1975/moodle-filter_oembed:
-    outcome: exists
-    detail: component filter_oembed already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/vivek4/moodle-filter_oembed,
+      which holds component filter_oembed
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: filter_oembed
   brum1975/moodle-mod_book:
     outcome: exists
     detail: component mod_book already indexed this run
@@ -13067,10 +13150,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   bycs-lp/moodle-mod_aichat:
-    outcome: exists
-    detail: component mod_aichat already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_aichat, held by https://github.com/surlabs/AIChatForMoodle;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_aichat
   bycs-lp/moodle-mod_individualfeedback:
     outcome: exists
     detail: component mod_individualfeedback already registered (first-come, RFC §8)
@@ -13217,10 +13302,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   call-learning/moodle-atto_lti:
-    outcome: exists
-    detail: component atto_lti already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/openfun/moodle-atto_lti, which
+      holds component atto_lti
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: atto_lti
   call-learning/moodle-auth_psup:
     outcome: written
     detail: listed as auth_psup
@@ -13478,10 +13565,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   capbussat/moodle-plugin-message:
-    outcome: exists
-    detail: component local_message already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_message, held by https://github.com/NawarShabook/Moodle_Message_Plugin;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_message
   carleton/moodle-mod_simplescheduler:
     outcome: no-version-php
     detail: no parseable version.php at root of branch master
@@ -13584,10 +13673,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   catalyst/moodle-auth_basic:
-    outcome: exists
-    detail: component auth_basic already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/aspark21snow/moodle-auth_basic,
+      which holds component auth_basic
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: auth_basic
   catalyst/moodle-auth_disguise:
     outcome: written
     detail: listed as auth_disguise
@@ -13963,10 +14054,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   catalyst/moodle-logstore_graylog:
-    outcome: exists
-    detail: component logstore_graylog already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/dbinoj/moodle-logstore_graylog,
+      which holds component logstore_graylog
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: logstore_graylog
   catalyst/moodle-logstore_referrer:
     outcome: written
     detail: listed as logstore_referrer
@@ -14138,11 +14231,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   catalyst/moodle-report_coursecompletion:
-    outcome: exists
-    detail: component report_coursecompletion already registered (first-come, RFC
-      §8)
+    outcome: name-collision
+    detail: independent repository declaring report_coursecompletion, held by https://gitlab.com/sproutlabs/moodle-report-course-completion;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: report_coursecompletion
   catalyst/moodle-report_coursesize:
     outcome: exists
     detail: component report_coursesize already registered (first-come, RFC §8)
@@ -14541,10 +14635,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   cbluesprl/moodle-theme_boost_union:
-    outcome: exists
-    detail: component theme_boost_union already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/moodle-an-hochschulen/moodle-theme_boost_union,
+      which holds component theme_boost_union
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_boost_union
   cbluesprl/moodle_auth_shibboleth:
     outcome: no-version-php
     detail: no parseable version.php at root of branch MDL_64976
@@ -14997,10 +15093,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   cgs-ets/moodle-tiny_fontcolor:
-    outcome: exists
-    detail: component tiny_fontcolor already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tiny_fontcolor, held by https://github.com/bfh/moodle-tiny_fontcolor;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tiny_fontcolor
   champi-r/moodle-configurable_reports_repository:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -15062,10 +15160,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   chrisrobert43/moodle-auth_googleoauth2:
-    outcome: exists
-    detail: component auth_googleoauth2 already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring auth_googleoauth2, held by https://github.com/rabser/moodle-auth_googleoauth2;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: auth_googleoauth2
   christianbayer/moodle-mod_meet:
     outcome: written
     detail: listed as mod_meet
@@ -15948,10 +16048,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   cwarwicker/moodle-local_parentportal:
-    outcome: exists
-    detail: component local_parentportal already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_parentportal, held by https://github.com/Smartlearn-edu/moodle-local_parentportal;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_parentportal
   cwarwicker/moodle-tool_ribbons:
     outcome: written
     detail: listed as tool_ribbons
@@ -16103,10 +16205,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   danielkonrad-1982/moodle-filter_opencast:
-    outcome: exists
-    detail: component filter_opencast already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring filter_opencast, held by https://github.com/Opencast-Moodle/moodle-filter_opencast;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: filter_opencast
   danielluizkoenig/moodle-local_notification:
     outcome: exists
     detail: component local_notification already indexed this run
@@ -16338,10 +16442,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   danmarsden/moodle-mod_attendance:
-    outcome: exists
-    detail: component mod_attendance already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/rrusso33/moodle-mod_attendance,
+      which holds component mod_attendance
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_attendance
   danmarsden/moodle-mod_dialogue:
     outcome: exists
     detail: component mod_dialogue already registered (first-come, RFC §8)
@@ -16373,10 +16479,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   danmarsden/moodle-profilefield_radio:
-    outcome: exists
-    detail: component profilefield_radio already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring profilefield_radio, held by https://github.com/santoshndev/moodle-profilefield_radio;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: profilefield_radio
   danmarsden/moodle_mod_attforblock_old:
     outcome: exists
     detail: component mod_attforblock already registered (first-come, RFC §8)
@@ -16388,11 +16496,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   danowar2k/moodle-theme_boost_union_child:
-    outcome: exists
-    detail: component theme_boost_union_child already registered (first-come, RFC
-      §8)
+    outcome: copy
+    detail: shares git history with https://github.com/moodle-an-hochschulen/moodle-theme_boost_union_child,
+      which holds component theme_boost_union_child
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_boost_union_child
   danpoltawski/moodle-repository_activitylinks:
     outcome: written
     detail: listed as repository_activitylinks
@@ -16882,10 +16991,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   dbnschools/moodle-theme_fordson:
-    outcome: exists
-    detail: component theme_fordson already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring theme_fordson, held by https://gitlab.com/viet-do/moodle-theme_fordson;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_fordson
   dbnschools/moodle-theme_learnr:
     outcome: exists
     detail: component theme_learnr already registered (first-come, RFC §8)
@@ -17487,10 +17598,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   dmitriim/moodle-local_selfcohort:
-    outcome: exists
-    detail: component local_selfcohort already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/adapta/moodle-local_selfcohort,
+      which holds component local_selfcohort
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_selfcohort
   dmitriim1/moodle-local_selfcohort:
     outcome: exists
     detail: component local_selfcohort already indexed this run
@@ -17689,10 +17802,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   dne-elearning/moodle-magistere/moodle-tool_mergeusers:
-    outcome: exists
-    detail: component tool_mergeusers already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tool_mergeusers, held by https://github.com/jpahullo/moodle-tool_mergeusers;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tool_mergeusers
   doebi/MoodleScraper:
     outcome: no-version-php
     detail: no parseable version.php at root of branch master
@@ -18094,10 +18209,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   dthies/moodle-atto_styles:
-    outcome: exists
-    detail: component atto_styles already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring atto_styles, held by https://github.com/moodle-an-hochschulen/moodle-atto_styles;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: atto_styles
   dthies/moodle-atto_titlewbq:
     outcome: written
     detail: listed as atto_titlewbq
@@ -18375,10 +18492,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   duyphamluanh/moodle-local_modcustomfields:
-    outcome: exists
-    detail: component local_modcustomfields already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/adapta/moodle-local_modcustomfields,
+      which holds component local_modcustomfields
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_modcustomfields
   dvdcastro/moodle-block_chuck:
     outcome: written
     detail: listed as block_chuck
@@ -18915,10 +19034,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   eduardo336/moodle-block-minhabiblioteca:
-    outcome: exists
-    detail: component block_minhabiblioteca already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring block_minhabiblioteca, held by https://gitlab.com/adapta/moodle-block_minhabiblioteca;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_minhabiblioteca
   education-ai/Moodle-Quiz-H5P-Export:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -19403,10 +19524,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   equicomv2/moodle-enrol_mercadopago:
-    outcome: exists
-    detail: component enrol_mercadopago already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring enrol_mercadopago, held by https://github.com/harregoces/moodle-enrol_mercadopago;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: enrol_mercadopago
   eranac/moodle-format_topcoll:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -20028,10 +20151,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   fmido88/moodle-local_pg:
-    outcome: exists
-    detail: component local_pg already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_pg, held by https://github.com/harble/moodle_local_pg;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_pg
   fmido88/moodle-paygw_fawry:
     outcome: written
     detail: listed as paygw_fawry
@@ -21150,10 +21275,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   grabs/moodle-local_dummy:
-    outcome: exists
-    detail: component local_dummy already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_dummy, held by https://github.com/djarran/moodle-local_dummy;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_dummy
   grabs/moodle-local_extend_navigation:
     outcome: exists
     detail: component local_extend_navigation already registered (first-come, RFC
@@ -21629,10 +21756,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   hig3r/moodle-qtype_stack-doc-ja:
-    outcome: exists
-    detail: component qtype_stack already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/maths/moodle-qtype_stack, which
+      holds component qtype_stack
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: qtype_stack
   hinkelmann/moodle-block_chatgpt_quizer:
     outcome: written
     detail: listed as block_chatgpt_quizer
@@ -22266,41 +22395,52 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   industria-elearning/moodle-local_assign_ai:
-    outcome: exists
-    detail: component local_assign_ai already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/datacurso/moodle-local_assign_ai,
+      which holds component local_assign_ai
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_assign_ai
   industria-elearning/moodle-local_coursedynamicrules:
-    outcome: exists
-    detail: component local_coursedynamicrules already registered (first-come, RFC
-      §8)
+    outcome: copy
+    detail: shares git history with https://github.com/datacurso/moodle-local_coursedynamicrules,
+      which holds component local_coursedynamicrules
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_coursedynamicrules
   industria-elearning/moodle-local_coursegen:
-    outcome: exists
-    detail: component local_coursegen already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_coursegen, held by https://github.com/jport500/moodle-local_coursegen;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_coursegen
   industria-elearning/moodle-local_datacurso_ratings:
     outcome: exists
     detail: component local_datacurso_ratings already indexed this run
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   industria-elearning/moodle-local_dttutor:
-    outcome: exists
-    detail: component local_dttutor already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/datacurso/moodle-local_dttutor,
+      which holds component local_dttutor
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_dttutor
   industria-elearning/moodle-local_forum_ai:
-    outcome: exists
-    detail: component local_forum_ai already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/datacurso/moodle-local_forum_ai,
+      which holds component local_forum_ai
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_forum_ai
   industria-elearning/moodle-local_socialcert:
-    outcome: exists
-    detail: component local_socialcert already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/datacurso/moodle-local_socialcert,
+      which holds component local_socialcert
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_socialcert
   industria-elearning/moodle-local_whatsapp:
     outcome: exists
     detail: component local_whatsapp already indexed this run
@@ -22925,10 +23065,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   ised-ocp-dev/Moodle-Course-Completed-Enrolment:
-    outcome: exists
-    detail: component enrol_coursecompleted already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring enrol_coursecompleted, held by https://github.com/ewallah/moodle-enrol_coursecompleted;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: enrol_coursecompleted
   ised-ocp-dev/Moodle-Custom-Reports:
     outcome: written
     detail: listed as local_customreports
@@ -23015,10 +23157,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   itamart/moodle-local_loginas:
-    outcome: exists
-    detail: component local_loginas already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_loginas, held by https://github.com/bmbrands/moodle-local_loginas;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_loginas
   itamart/moodle-local_messageprovider:
     outcome: exists
     detail: component local_messageprovider already registered (first-come, RFC §8)
@@ -23651,10 +23795,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   jl2035/moodle_mod_mootyper:
-    outcome: exists
-    detail: component mod_mootyper already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/drachels/moodle-mod_mootyper,
+      which holds component mod_mootyper
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_mootyper
   jlb224/moodle-local_coursereport:
     outcome: exists
     detail: component local_coursereport already registered (first-come, RFC §8)
@@ -23872,20 +24018,24 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   johnpercival/moodle-theme_adaptable:
-    outcome: exists
-    detail: component theme_adaptable already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring theme_adaptable, held by https://github.com/gjbarnard/moodle-theme_adaptable;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_adaptable
   jonathanjoegit/moodle-format_grid_310:
     outcome: exists
     detail: component format_grid already indexed this run
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   jonathanjoegit/moodle-format_topcoll_310:
-    outcome: exists
-    detail: component format_topcoll already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/gjbarnard/moodle-format_topcoll,
+      which holds component format_topcoll
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: format_topcoll
   jonathasalves8/moodle-mod_template:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -24107,10 +24257,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   jport500/moodle-tool_muprog:
-    outcome: exists
-    detail: component tool_muprog already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tool_muprog, held by https://github.com/mutms/moodle-tool_muprog;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tool_muprog
   jport500/moodle-tool_muprog-patch:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -24549,11 +24701,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   justinhunt/moodle-availability_sectioncompleted:
-    outcome: exists
-    detail: component availability_sectioncompleted already registered (first-come,
-      RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring availability_sectioncompleted, held by
+      https://github.com/bdecentgmbh/moodle-availability_sectioncompleted; see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: availability_sectioncompleted
   justinhunt/moodle-block_joingroup:
     outcome: bad-license
     detail: 'license: none detected'
@@ -24710,15 +24863,19 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   justinhunt/moodle-mod_readaloud:
-    outcome: exists
-    detail: component mod_readaloud already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_readaloud, held by https://github.com/udir-moodle/mod_readaloud;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_readaloud
   justinhunt/moodle-mod_solo:
-    outcome: exists
-    detail: component mod_solo already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_solo, held by https://github.com/udir-moodle/mod_solo;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_solo
   justinhunt/moodle-mod_tquiz:
     outcome: written
     detail: listed as mod_tquiz
@@ -25403,10 +25560,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   kiklopgs/moodle-local_dompdf:
-    outcome: exists
-    detail: component local_dompdf already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_dompdf, held by https://github.com/kiklop74/moodle-local_dompdf;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_dompdf
   kiklopgs/moodle-theme_adaptable:
     outcome: exists
     detail: component theme_adaptable already indexed this run
@@ -25565,10 +25724,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   kristian-94/moodle-local_message:
-    outcome: exists
-    detail: component local_message already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_message, held by https://github.com/NawarShabook/Moodle_Message_Plugin;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_message
   krx90/moodle-quiz-exporter:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -26217,10 +26378,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   liip-elearning/moodle-repository_s3bucket:
-    outcome: exists
-    detail: component repository_s3bucket already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/ewallah/moodle-repository_s3bucket,
+      which holds component repository_s3bucket
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: repository_s3bucket
   liip/moodle-local_confseed:
     outcome: written
     detail: listed as local_confseed
@@ -26789,10 +26952,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   luisgg/moodle-theme_essential:
-    outcome: exists
-    detail: component theme_essential already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/gjb2048/moodle-theme_essential,
+      which holds component theme_essential
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_essential
   luislanza/moodle-attendance-reports:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -28115,10 +28280,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   mattporritt/moodle-tiny_ai:
-    outcome: exists
-    detail: component tiny_ai already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tiny_ai, held by https://github.com/bycs-lp/moodle-tiny_ai;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tiny_ai
   mattporritt/moodle-tiny_html:
     outcome: written
     detail: listed as tiny_html
@@ -28398,10 +28565,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   me-yeatz/moodle-plagiarism_turnitin:
-    outcome: exists
-    detail: component plagiarism_turnitin already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/turnitin/moodle-plagiarism_turnitin,
+      which holds component plagiarism_turnitin
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: plagiarism_turnitin
   mediamaisteri/moodle-customfield_number:
     outcome: written
     detail: listed as customfield_number
@@ -29542,10 +29711,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   moodleacademy/moodle-local_greetings:
-    outcome: exists
-    detail: component local_greetings already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_greetings, held by https://github.com/amz-x/moodle-local_greetings;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_greetings
   moodleacademy/moodle-local_jsexample:
     outcome: written
     detail: listed as local_jsexample
@@ -29577,10 +29748,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   moodleblockevaluation/moodle-block_evaluation:
-    outcome: exists
-    detail: component block_evaluation already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring block_evaluation, held by https://github.com/HarryBleckert/moodle-block_evaluation;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_evaluation
   moodlebox/moodle-tool_moodlebox:
     outcome: exists
     detail: component tool_moodlebox already registered (first-come, RFC §8)
@@ -29982,10 +30155,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   moodlehu/moodle-mod_etherpadlite:
-    outcome: exists
-    detail: component mod_etherpadlite already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_etherpadlite, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-mod_etherpadlite;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_etherpadlite
   moodlehu/moodle-mod_podcaster19:
     outcome: no-version-php
     detail: no parseable version.php at root of branch master
@@ -30102,10 +30277,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   moodleou/moodle-mod_oublog:
-    outcome: exists
-    detail: component mod_oublog already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_oublog, held by https://github.com/GEveloper/mod_oublog-advanced;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_oublog
   moodleou/moodle-mod_ouwiki:
     outcome: exists
     detail: component mod_ouwiki already registered (first-come, RFC §8)
@@ -30228,10 +30405,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   moodleou/moodle-report_customsql:
-    outcome: exists
-    detail: component report_customsql already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/rrusso33/moodle-report_customsql,
+      which holds component report_customsql
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: report_customsql
   moodleou/moodle-report_editdates:
     outcome: exists
     detail: component report_editdates already registered (first-come, RFC §8)
@@ -30348,10 +30527,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   moodleworkplace/moodle-tool_certificate:
-    outcome: exists
-    detail: component tool_certificate already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/stronk7/moodle-tool_certificate,
+      which holds component tool_certificate
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tool_certificate
   moodleworkplace/moodle-tool_datewatch:
     outcome: written
     detail: listed as tool_datewatch
@@ -31244,10 +31425,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   nakaharatt/moodle-block_forum_report:
-    outcome: exists
-    detail: component block_forum_report already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/tallthom/moodle-block_forum_report,
+      which holds component block_forum_report
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_forum_report
   nakaharatt/moodle-block_jikanwari:
     outcome: written
     detail: listed as block_jikanwari
@@ -31430,10 +31613,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   ndunand/moodle-mod_opencast:
-    outcome: exists
-    detail: component mod_opencast already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_opencast, held by https://github.com/Opencast-Moodle/moodle-mod_opencast;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_opencast
   ndunand/moodle-mod_switchcast:
     outcome: written
     detail: listed as mod_switchcast
@@ -31475,10 +31660,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   ned-code/moodle-mod_quiz_seb_access:
-    outcome: exists
-    detail: component quizaccess_seb already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring quizaccess_seb, held by https://github.com/catalyst/moodle-quizaccess_seb;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: quizaccess_seb
   neilos78/Moodle---Intrepid-Module:
     outcome: no-version-php
     detail: no parseable version.php at root of branch master
@@ -31770,10 +31957,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   noparadise/moodle-mod_slideshow:
-    outcome: exists
-    detail: component mod_slideshow already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_slideshow, held by https://github.com/dixeo/moodle-mod_slideshow;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_slideshow
   normanify/moodle-quiz-archive-worker:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -32485,20 +32674,24 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   open-lms-open-source/moodle-mod_collaborate:
-    outcome: exists
-    detail: component mod_collaborate already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_collaborate, held by https://gitlab.com/angela-araujo/moodle-mod_collaborate;
+      see NAMESPACE.md
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_collaborate
   open-lms-open-source/moodle-mod_hsuforum:
     outcome: exists
     detail: component mod_hsuforum already registered (first-come, RFC §8)
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   open-lms-open-source/moodle-mod_livepoll:
-    outcome: exists
-    detail: component mod_livepoll already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_livepoll, held by https://github.com/dvdcastro/moodle-mod_livepoll;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_livepoll
   open-lms-open-source/moodle-mod_mediagallery:
     outcome: exists
     detail: component mod_mediagallery already registered (first-come, RFC §8)
@@ -32912,10 +33105,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   papillon326/moodle-repository_owncloud:
-    outcome: exists
-    detail: component repository_owncloud already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring repository_owncloud, held by https://github.com/learnweb/moodle-repository_owncloud;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: repository_owncloud
   papnkukn/node-moodle:
     outcome: no-version-php
     detail: no parseable version.php at root of branch main
@@ -33257,10 +33452,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   paulnatemv/moodle-enrol_programs:
-    outcome: exists
-    detail: component enrol_programs already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/open-lms-open-source/moodle-enrol_programs,
+      which holds component enrol_programs
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: enrol_programs
   paulnatemv/moodle-local_emailmanager:
     outcome: written
     detail: listed as local_emailmanager
@@ -33681,10 +33878,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   praxisdigital/mod_hvp:
-    outcome: exists
-    detail: component mod_hvp already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/h5p/moodle-mod_hvp, which holds
+      component mod_hvp
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_hvp
   praxisdigital/mod_smartlink:
     outcome: bad-license
     detail: 'license: none detected'
@@ -33956,10 +34155,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   projectestac/moodle-tinymce_wiris:
-    outcome: exists
-    detail: component tinymce_tiny_mce_wiris already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tinymce_tiny_mce_wiris, held by https://github.com/wiris/moodle-tinymce_tiny_mce_wiris;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tinymce_tiny_mce_wiris
   projectestac/odissea:
     outcome: no-version-php
     detail: no parseable version.php at root of branch master
@@ -34113,10 +34314,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   raja-lmsace/moodle-block-dash:
-    outcome: exists
-    detail: component block_dash already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring block_dash, held by https://github.com/bdecentgmbh/moodle-block_dash;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_dash
   raja-lmsace/moodle-customfield_multicategory:
     outcome: exists
     detail: component customfield_multicategory already indexed this run
@@ -34133,10 +34336,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   raja-lmsace/moodle-tool-skills:
-    outcome: exists
-    detail: component tool_skills already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tool_skills, held by https://github.com/bdecentgmbh/moodle-tool_skills;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tool_skills
   rajalmsace/moodle-blocks-dash:
     outcome: exists
     detail: component block_dash already indexed this run
@@ -34500,66 +34705,87 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   reseaucanope/moodle-atto_fontawesomepicker:
-    outcome: exists
-    detail: component atto_fontawesomepicker already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring atto_fontawesomepicker, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-atto_fontawesomepicker;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: atto_fontawesomepicker
   reseaucanope/moodle-format_magistere_topics:
-    outcome: exists
-    detail: component format_magistere_topics already registered (first-come, RFC
-      §8)
+    outcome: name-collision
+    detail: independent repository declaring format_magistere_topics, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-format_magistere_topics;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: format_magistere_topics
   reseaucanope/moodle-format_modular:
-    outcome: exists
-    detail: component format_modular already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring format_modular, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-format_modular;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: format_modular
   reseaucanope/moodle-local_coursehub:
     outcome: bad-license
     detail: 'license: none detected'
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   reseaucanope/moodle-local_magistere_offers:
-    outcome: exists
-    detail: component local_magistere_offers already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_magistere_offers, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-local_magistere_offers;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_magistere_offers
   reseaucanope/moodle-local_usagemonitor:
-    outcome: exists
-    detail: component local_usagemonitor already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_usagemonitor, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-local_usagemonitor;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_usagemonitor
   reseaucanope/moodle-local_workflow:
-    outcome: exists
-    detail: component local_workflow already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_workflow, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-local_workflow;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_workflow
   reseaucanope/moodle-mod_collabwordcloud:
-    outcome: exists
-    detail: component mod_collabwordcloud already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_collabwordcloud, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-mod_collabwordcloud;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_collabwordcloud
   reseaucanope/moodle-mod_completionmarker:
-    outcome: exists
-    detail: component mod_completionmarker already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_completionmarker, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-mod_completionmarker;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_completionmarker
   reseaucanope/moodle-mod_coursebadges:
-    outcome: exists
-    detail: component mod_coursebadges already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_coursebadges, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-mod_coursebadges;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_coursebadges
   reseaucanope/moodle-mod_jupyternotebook:
-    outcome: exists
-    detail: component mod_jupyternotebook already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_jupyternotebook, held by https://gitlab.com/rodrigoesborges/moodle-mod_jupyternotebook;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_jupyternotebook
   reseaucanope/moodle-mod_labellud:
-    outcome: exists
-    detail: component mod_labellud already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_labellud, held by https://gitlab.com/dne-elearning/moodle-magistere/moodle-mod_labellud;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_labellud
   reseaucanope/moodle-mod_wordcloud:
     outcome: exists
     detail: component mod_wordcloud already indexed this run
@@ -35077,10 +35303,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   roelmann/moodle-theme_waxed:
-    outcome: exists
-    detail: component theme_waxed already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/ro-mdl-themes/moodle-theme_waxed,
+      which holds component theme_waxed
     first-seen: '2026-07-10'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_waxed
   rogersegu/moodle-atto_c4l:
     outcome: written
     detail: listed as atto_c4l
@@ -35319,21 +35547,24 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   rrusso33/moodle-block_analytics_graphs:
-    outcome: exists
-    detail: component block_analytics_graphs already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/marceloschmitt/moodle-block_analytics_graphs,
+      which holds component block_analytics_graphs
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_analytics_graphs
   rrusso33/moodle-block_etextbook:
     outcome: exists
     detail: component block_etextbook already registered (first-come, RFC §8)
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   rrusso33/moodle-block_material-download:
-    outcome: exists
-    detail: component block_material_download already registered (first-come, RFC
-      §8)
+    outcome: copy
+    detail: shares git history with https://github.com/TUM-MZ/moodle-block_material-download,
+      which holds component block_material_download
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_material_download
   rrusso33/moodle-block_poll:
     outcome: exists
     detail: component block_poll already registered (first-come, RFC §8)
@@ -35350,10 +35581,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   rrusso33/moodle-mod_bigbluebuttonbn:
-    outcome: exists
-    detail: component mod_bigbluebuttonbn already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/blindsidenetworks-ps/moodle-mod_bigbluebuttonbn,
+      which holds component mod_bigbluebuttonbn
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_bigbluebuttonbn
   rrusso33/moodle-mod_certificate:
     outcome: bad-license
     detail: 'license: none detected'
@@ -35543,10 +35776,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   sac-isc-moodle-lms/moodle-availability_language:
-    outcome: exists
-    detail: component availability_language already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/ewallah/moodle-availability_language,
+      which holds component availability_language
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: availability_language
   sac-isc-moodle-lms/moodle-filter_multilang2:
     outcome: exists
     detail: component filter_multilang2 already indexed this run
@@ -35763,10 +35998,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   samuelcalegari/moodle-mod_guacamole:
-    outcome: exists
-    detail: component mod_guacamole already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_guacamole, held by https://github.com/SergioComeron/moodle_mod_guacamole;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_guacamole
   samuelcalegari/moodle-mod_mirotranslate:
     outcome: written
     detail: listed as mod_mirotranslate
@@ -36051,10 +36288,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   saylordotorg/moodle-quizaccess_proctoring:
-    outcome: exists
-    detail: component quizaccess_proctoring already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring quizaccess_proctoring, held by https://github.com/eLearning-BS23/moodle-quizaccess_proctoring;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: quizaccess_proctoring
   saylordotorg/moodle-theme_saylor:
     outcome: written
     detail: listed as theme_saylor
@@ -37890,10 +38129,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   telabotanica/moodle-theme_telaformation:
-    outcome: exists
-    detail: component theme_telaformation already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/uvedtb/moodle-theme_telaformation,
+      which holds component theme_telaformation
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_telaformation
   tellit/moodle-quizaccess_ldflow:
     outcome: written
     detail: listed as quizaccess_ldflow
@@ -38035,10 +38276,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   thepurpleblob/moodle-local_gugrades:
-    outcome: exists
-    detail: component local_gugrades already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_gugrades, held by https://github.com/University-of-Glasgow-Public/moodle-local_gugrades;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_gugrades
   thepurpleblob/moodle-mediawiki-sso:
     outcome: no-version-php
     detail: no parseable version.php at root of branch master
@@ -38065,10 +38308,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   thiago.serrao/moodle-mod_customcert:
-    outcome: exists
-    detail: component mod_customcert already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://github.com/mdjnelson/moodle-mod_customcert,
+      which holds component mod_customcert
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_customcert
   thiagogomesverissimo/moodle-local_edai:
     outcome: bad-license
     detail: 'license: none detected'
@@ -39047,15 +39292,19 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   udir-moodle/atto_wiris:
-    outcome: exists
-    detail: component atto_wiris already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring atto_wiris, held by https://github.com/wiris/moodle-atto_wiris;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: atto_wiris
   udir-moodle/auth_basic:
-    outcome: exists
-    detail: component auth_basic already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring auth_basic, held by https://gitlab.com/aspark21snow/moodle-auth_basic;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: auth_basic
   udir-moodle/auth_saml:
     outcome: written
     detail: listed as auth_saml
@@ -39067,17 +39316,19 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   udir-moodle/block_completion_progress:
-    outcome: exists
-    detail: component block_completion_progress already registered (first-come, RFC
-      §8)
+    outcome: name-collision
+    detail: independent repository declaring block_completion_progress, held by https://github.com/jonof/moodle-block_completion_progress;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_completion_progress
   udir-moodle/block_configurable_reports:
-    outcome: exists
-    detail: component block_configurable_reports already registered (first-come, RFC
-      §8)
+    outcome: name-collision
+    detail: independent repository declaring block_configurable_reports, held by https://gitlab.com/angela-araujo/moodle-block_configurablereports;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: block_configurable_reports
   udir-moodle/block_readspeaker_embhl:
     outcome: written
     detail: listed as block_readspeaker_embhl
@@ -39099,20 +39350,24 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   udir-moodle/filter_wiris:
-    outcome: exists
-    detail: component filter_wiris already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring filter_wiris, held by https://github.com/wiris/moodle-filter_wiris;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: filter_wiris
   udir-moodle/format_designer:
     outcome: exists
     detail: component format_designer already indexed this run
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   udir-moodle/format_flexsections:
-    outcome: exists
-    detail: component format_flexsections already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring format_flexsections, held by https://github.com/marinaglancy/moodle-format_flexsections;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: format_flexsections
   udir-moodle/local_mailtest:
     outcome: exists
     detail: component local_mailtest already indexed this run
@@ -39224,10 +39479,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   udir-moodle/tiny_multilang2:
-    outcome: exists
-    detail: component tiny_multilang2 already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tiny_multilang2, held by https://github.com/bfh/moodle-tiny_multilang2;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tiny_multilang2
   udir-moodle/tiny_poodll:
     outcome: written
     detail: listed as tiny_poodll
@@ -39239,10 +39496,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   udir-moodle/tool_crawler:
-    outcome: exists
-    detail: component tool_crawler already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring tool_crawler, held by https://github.com/catalyst/moodle-tool_crawler;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: tool_crawler
   udir-moodle/tool_webanalytics:
     outcome: exists
     detail: component tool_webanalytics already indexed this run
@@ -39254,10 +39513,12 @@ repos:
     first-seen: '2026-07-10'
     last-checked: '2026-07-11'
   uemanet/moodle-local_integracao:
-    outcome: exists
-    detail: component local_integracao already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring local_integracao, held by https://gitlab.com/cme_ineprotec/moodle-local_integracao;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: local_integracao
   uemanet/moodle-local_integracao_v2:
     outcome: written
     detail: listed as local_integracao_v2
@@ -39460,10 +39721,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   unitec-moodle/moodle_311_course_format_onetopic:
-    outcome: exists
-    detail: component format_onetopic already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring format_onetopic, held by https://github.com/davidherney/moodle-format_onetopic;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: format_onetopic
   unitec-moodle/moodle_311_filter_echo360:
     outcome: written
     detail: listed as filter_echo360
@@ -39595,10 +39858,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   unitec-moodle/moodle_41_plugin_mod_checklist:
-    outcome: exists
-    detail: component mod_checklist already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_checklist, held by https://github.com/davosmith/moodle-checklist;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_checklist
   unitec-moodle/moodle_41_plugin_mod_questionnaire:
     outcome: exists
     detail: component mod_questionnaire already indexed this run
@@ -39832,10 +40097,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   vasanthlmsace/moodle-enrol_credit:
-    outcome: exists
-    detail: component enrol_credit already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring enrol_credit, held by https://github.com/bdecentgmbh/moodle-enrol_credit;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: enrol_credit
   vasanthlmsace/moodle_local_learningtools:
     outcome: exists
     detail: component local_learningtools already indexed this run
@@ -40170,10 +40437,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   vfremaux/moodle-enrol_profilefield:
-    outcome: exists
-    detail: component enrol_profilefield already registered (first-come, RFC §8)
+    outcome: copy
+    detail: shares git history with https://gitlab.com/riddler_arg/moodle-enrol_profilefield,
+      which holds component enrol_profilefield
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: enrol_profilefield
   vfremaux/moodle-enrol_trainingcredits:
     outcome: written
     detail: listed as enrol_trainingcredits
@@ -41354,10 +41623,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   xow/moodle-mod_quizgame:
-    outcome: exists
-    detail: component mod_quizgame already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring mod_quizgame, held by https://github.com/tonussi/moodle-mod_quizgame-multiplayer-competitive;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: mod_quizgame
   xrayresearch/moodle-auth-fb:
     outcome: no-version-php
     detail: no parseable version.php at root of branch master
@@ -41697,10 +41968,12 @@ repos:
     first-seen: '2026-07-11'
     last-checked: '2026-07-11'
   yurinskiy/moodle-theme_adaptable:
-    outcome: exists
-    detail: component theme_adaptable already registered (first-come, RFC §8)
+    outcome: name-collision
+    detail: independent repository declaring theme_adaptable, held by https://github.com/gjbarnard/moodle-theme_adaptable;
+      see NAMESPACE.md
     first-seen: '2026-07-11'
-    last-checked: '2026-07-11'
+    last-checked: '2026-07-22'
+    component: theme_adaptable
   yusufwib01/moodle-local_customhomepage:
     outcome: written
     detail: listed as local_customhomepage
