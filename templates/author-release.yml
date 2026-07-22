@@ -25,12 +25,14 @@ on:
 
 env:
   CAMP_INDEX_REPO: camp-registry/camp-index  # the camp index repository
-  COMPONENT: mod_example                 # ← your frankenstyle component name
-  # Optional override — leave empty (recommended) and camp reads the
-  # supported range from your version.php at the tag: the
-  # $plugin->supported range when declared, else the single branch
-  # $plugin->requires maps to. Set it only when version.php can't say
-  # what you mean (e.g. a non-contiguous set like "4.1,4.4").
+  # Both values below are optional overrides — with them empty
+  # (recommended), everything is read from your version.php at the tag:
+  #   COMPONENT        ← $plugin->component (your frankenstyle name)
+  #   SUPPORTED_MOODLE ← the $plugin->supported range when declared,
+  #                      else the single branch $plugin->requires maps
+  #                      to. Set it only when version.php can't say what
+  #                      you mean (e.g. a non-contiguous set "4.1,4.4").
+  COMPONENT: ""
   SUPPORTED_MOODLE: ""
 
 jobs:
@@ -56,6 +58,18 @@ jobs:
 
       - name: Install camp tools
         run: pip install --quiet "git+https://github.com/camp-registry/camp-tools@v0.2.21"
+
+      - name: Resolve component name
+        run: |
+          if [ -z "${COMPONENT}" ]; then
+            COMPONENT=$(sed -nE 's/.*\$plugin->component[[:space:]]*=[[:space:]]*.?([a-z][a-z0-9_]*).?[[:space:]]*;.*/\1/p' plugin/version.php | head -1)
+          fi
+          if [ -z "${COMPONENT}" ]; then
+            echo "::error::COMPONENT is empty and \$plugin->component was not found in version.php — set one of them"
+            exit 1
+          fi
+          echo "COMPONENT=${COMPONENT}" >> "$GITHUB_ENV"
+          echo "component: ${COMPONENT}"
 
       - name: Require a listing manifest
         run: camp scaffold plugin --check
