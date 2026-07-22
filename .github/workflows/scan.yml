@@ -1,0 +1,86 @@
+# Monthly discovery scan: finds new public Moodle plugin repositories on
+# GitHub and GitLab.com, writes Tier 0 listings for eligible ones, and
+# records every evaluated repository in the scan ledger, including
+# component-name collisions (copy / name-collision outcomes, NAMESPACE.md
+# in camp-docs). Ledger entries younger than the recheck window are
+# skipped, so the steady-state cost is the new-repo tail, not the catalog.
+# Pushes directly to main as the camp-registry-automation app, the same
+# non-human identity the metrics refresh uses.
+
+name: Discovery scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max results per GitHub search query"
+        default: "200"
+      recheck-days:
+        description: "Re-evaluate ledger entries older than this many days"
+        default: "45"
+      dry-run:
+        description: "Report without writing entries (true/false)"
+        default: "false"
+  schedule:
+    - cron: "23 2 3 * *"   # monthly on the 3rd, ahead of the daily publish
+
+permissions:
+  contents: read           # pushes use the app token, not GITHUB_TOKEN
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Mint app token
+        id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app.outputs.token }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install camp tools
+        run: pip install --quiet "camp-tools @ git+https://github.com/camp-registry/camp-tools@v0.2.23"
+
+      # inputs are empty on schedule runs; the fallbacks keep the cron
+      # behavior identical to the dispatch defaults. 45-day recheck on a
+      # monthly cadence means known repos are re-evaluated roughly every
+      # other run; brand-new repos are always evaluated.
+      - name: Scan GitHub
+        env:
+          GITHUB_TOKEN: ${{ steps.app.outputs.token }}
+        run: >
+          camp scan .
+          --limit ${{ inputs.limit || '200' }}
+          --recheck-days ${{ inputs.recheck-days || '45' }}
+          ${{ inputs.dry-run == 'true' && '--dry-run' || '' }}
+
+      # GITHUB_TOKEN is also set here: the collision classifier probes the
+      # GitHub API when the listed holder of a component lives there.
+      # GitLab search itself runs unauthenticated (rate-limit tolerant).
+      - name: Scan GitLab
+        env:
+          GITHUB_TOKEN: ${{ steps.app.outputs.token }}
+        run: >
+          camp scan-gitlab .
+          --recheck-days ${{ inputs.recheck-days || '45' }}
+          ${{ inputs.dry-run == 'true' && '--dry-run' || '' }}
+
+      - name: Push new listings and ledger
+        run: |
+          git add plugins discovery
+          if git diff --cached --quiet; then
+            echo "no changes"
+            exit 0
+          fi
+          git config user.name "camp project"
+          git config user.email "noreply@camp-registry.org"
+          git commit -m "discovery scan (scheduled)"
+          git push origin main
