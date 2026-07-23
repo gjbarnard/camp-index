@@ -2,9 +2,13 @@ component: availability_gearup
 source: https://github.com/branchup/moodle-availability_gearup
 maintainers:
 - github: branchup
-tier: 0
+tier: 1
 status: active
 discovered: '2026-07-11'
+security-contact: https://github.com/branchup/moodle-availability_gearup/security
+labels:
+  - fully-free
+  - commercial-support-available
 releases: []
 license: GPL-3.0
 summary: Moodle plugin to control access to course content based on Level Up Quest.
