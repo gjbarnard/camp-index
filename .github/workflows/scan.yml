@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Mint app token
         id: app
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v3
         with:
           app-id: ${{ vars.AUTOMATION_APP_ID }}
           private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}
@@ -41,11 +41,11 @@ jobs:
       # No persisted credentials: the job-start token expires after one
       # hour and a full sweep runs longer, so the push authenticates with
       # a fresh token minted at push time instead.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -81,7 +81,7 @@ jobs:
       # here), so the push gets its own freshly minted token.
       - name: Mint push token
         id: push-app
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v3
         with:
           app-id: ${{ vars.AUTOMATION_APP_ID }}
           private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}

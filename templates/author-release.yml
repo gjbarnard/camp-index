@@ -10,8 +10,10 @@
 #   4. opens a pull request against the camp index with the new release
 #      appended to your plugin's entry.
 #
-# NOTE: the personal-access-token PR flow is the bootstrap mechanism; it
-# will be replaced by trusted publishing (OIDC, RFC §4.3 / DESIGN.md D11).
+# NOTE: the personal-access-token PR flow is the bootstrap mechanism. It is
+# being replaced by registry-side publishing (an hourly tag watcher plus an
+# instant "publish release" issue form on camp-index), after which this
+# workflow becomes an optional fast path and the token can be retired.
 
 name: Publish release to camp
 
@@ -20,6 +22,12 @@ on:
     tags: ["v*"]
   workflow_dispatch: {}   # backfill an old release: run at the existing tag
                           #   gh workflow run camp-release.yml --ref v1.1.0
+
+# The job only reads this repository; everything it writes goes to your
+# camp-index fork via CAMP_INDEX_TOKEN, which never needs to exist as a
+# workflow permission.
+permissions:
+  contents: read
 
 env:
   CAMP_INDEX_REPO: camp-registry/camp-index  # the camp index repository
@@ -38,19 +46,20 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Check out plugin at the tag
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: plugin
           fetch-depth: 0
 
+      # No token: the index is public, and checkout would otherwise persist
+      # the credential into the working copy for every later step to read.
       - name: Check out camp index
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ env.CAMP_INDEX_REPO }}
           path: index-repo
-          token: ${{ secrets.CAMP_INDEX_TOKEN }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -85,7 +94,7 @@ jobs:
             ${SUPPORTED_MOODLE:+--supported-moodle "${SUPPORTED_MOODLE}"}
 
       - name: Open index pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           # CAMP_INDEX_TOKEN must be a CLASSIC personal access token with
           # the public_repo scope. Fine-grained tokens can't be scoped to
@@ -93,10 +102,11 @@ jobs:
           # this step — opening the PR against the upstream index.
           token: ${{ secrets.CAMP_INDEX_TOKEN }}
           path: index-repo
-          # Most authors don't have write access to the index. Fork
-          # camp-registry/camp-index once (keep the fork's default branch in
-          # sync is NOT required), then uncomment with your fork:
-          # push-to-fork: YOUR-GITHUB-USERNAME/camp-index
+          # Everyone publishes from a fork, index maintainers included.
+          # Fork camp-registry/camp-index once (keeping it in sync is NOT
+          # required); the default below assumes the fork lives under the
+          # same account/org as this plugin repo and is named camp-index.
+          push-to-fork: ${{ github.repository_owner }}/camp-index
           branch: release/${{ env.COMPONENT }}-${{ github.ref_name }}
           commit-message: "${{ env.COMPONENT }}: release ${{ github.ref_name }}"
           title: "${{ env.COMPONENT }}: release ${{ github.ref_name }}"

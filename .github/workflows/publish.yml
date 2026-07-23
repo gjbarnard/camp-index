@@ -41,16 +41,16 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # AUTHORS.md renders as /authors.html — single-sourced from
       # camp-docs so the site never drifts from the canonical guide.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: camp-registry/camp-docs
           path: docs-repo
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
