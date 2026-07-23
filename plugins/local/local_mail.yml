@@ -12,9 +12,9 @@ summary: Internal course messaging with a webmail-like interface
 labels:
 - fully-free
 metrics:
-  updated: '2023-06-27T21:10:06.985Z'
-  stars: 0
-  forks: 0
+  updated: '2026-07-01T19:57:31.688Z'
+  stars: 2
+  forks: 8
   open-issues: 0
   archived: false
-  checked: '2026-07-11'
+  checked: '2026-07-23'
