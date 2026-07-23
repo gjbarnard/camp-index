@@ -2,9 +2,13 @@ component: availability_xp
 source: https://github.com/FMCorz/moodle-availability_xp
 maintainers:
 - github: FMCorz
-tier: 0
+tier: 1
 status: active
 discovered: '2026-07-11'
+security-contact: https://github.com/FMCorz/moodle-availability_xp/security
+labels:
+  - fully-free
+  - commercial-support-available
 releases: []
 license: GPL-3.0
 summary: Moodle plugin to restrict access to an activity by experience level.
