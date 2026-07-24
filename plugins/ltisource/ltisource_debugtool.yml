@@ -14,3 +14,5 @@ metrics:
   open-issues: 0
   archived: false
   checked: '2026-07-23'
+summary: This plugin is for testing purposes only, do not install in a production
+  Moodle environment!

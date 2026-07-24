@@ -14,3 +14,6 @@ metrics:
   open-issues: 0
   archived: false
   checked: '2026-07-23'
+summary: This report allows grading staff to view a history of what happened to grades
+  in their courses. This is especially useful for courses that have multiple graders
+  and it's necessary to see if a grade or grades from one grader got altered by another.
