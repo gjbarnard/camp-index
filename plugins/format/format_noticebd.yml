@@ -2,8 +2,11 @@ component: format_noticebd
 source: https://github.com/gjb2048/moodle-format_noticebd
 maintainers:
 - github: gjb2048
-tier: 0
-status: active
+security-contact: https://github.com/gjb2048/moodle-format_noticebd/security/advisories/new
+labels:
+- fully-free
+tier: 1
+status: archived-upstream
 discovered: '2026-07-11'
 releases: []
 license: GPL-3.0
